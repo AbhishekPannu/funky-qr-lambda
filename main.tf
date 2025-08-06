@@ -27,14 +27,6 @@ module "zip_archive" {
     output_path = "extract_url.zip"
 }
 
-module "backend_state_file" {
-    source = "./modules/backend"
-    bucket_name = "funky-qr-lambda-backend-s3"
-    dynamodb_table = "funky-qr-state-locking-db"
-    state_file_path = "lambda/terraform.tfstate"
-    region_name = "us-east-1"
-}
-
 module "iam_for_url_extraction" {
     source = "./modules/iam"
     lambda_role_name = "test-funky-qr-lambda-role"
