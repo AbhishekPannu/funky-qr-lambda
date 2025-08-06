@@ -1,11 +1,11 @@
 resource "aws_lambda_function" "this" {
-    filename = var.zip_path
-    function_name = var.function_name
-    role = var.role_arn
-    handler = var.lambda_handler_name
-    source_code_hash = filebase64sha256(var.zip_path)
-    layers = var.layer_arns
-    runtime = var.runtime_version
+  filename         = var.zip_path
+  function_name    = var.function_name
+  role             = var.role_arn
+  handler          = var.lambda_handler_name
+  source_code_hash = filebase64sha256(var.zip_path)
+  layers           = var.layer_arns
+  runtime          = var.runtime_version
 }
 
 data "aws_s3_bucket" "existing" {

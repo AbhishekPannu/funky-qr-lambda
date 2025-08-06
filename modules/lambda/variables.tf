@@ -1,30 +1,30 @@
 variable "zip_path" {
-    type = string
+  type = string
 }
 
 variable "function_name" {
-    type = string
+  type = string
 }
 
 variable "role_arn" {
-    type = string
+  type = string
 }
 
 variable "lambda_handler_name" {
-    type = string
+  type = string
 }
 
 variable "layer_arns" {
-    type  = list(string)
-    default = []
+  type    = list(string)
+  default = []
 }
 
 variable "runtime_version" {
-    type = string
-    default = "python3.9"
+  type    = string
+  default = "python3.9"
 }
 
 variable "existing_bucket_name" {
-    description = "Name of Existing bucket for trigger"
-    type = string
+  description = "Name of Existing bucket for trigger"
+  type        = string
 }
