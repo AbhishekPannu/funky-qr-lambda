@@ -5,7 +5,7 @@ module "screenshot_url_lambda" {
     role_arn = module.screenshot_url_role.lambda_role_arn
     lambda_handler_name = "screenshot_url.screenshot_url"
     layer_arns = ["arn:aws:lambda:us-east-1:770693421928:layer:Klayers-p38-requests:18"]
-    existing_bucket_name = "test-screenshot-url-bucket"
+    existing_bucket_name = "s2h-raw"
 }
 
 module "screenshot_url_zip_archive" {
