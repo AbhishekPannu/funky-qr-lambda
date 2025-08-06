@@ -11,7 +11,7 @@ module "extract_url_lambda" {
 module "extract_url_zip_archive" {
   source      = "./modules/archive"
   source_file = "${path.root}/lambda_code/extract_url.py"
-  output_path = "${path.root}/modules/archive/extract_url.zip"
+  output_path = "extract_url.zip"
 }
 
 module "extract_url_role" {

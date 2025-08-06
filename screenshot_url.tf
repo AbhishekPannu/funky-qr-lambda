@@ -11,7 +11,7 @@ module "screenshot_url_lambda" {
 module "screenshot_url_zip_archive" {
     source = "./modules/archive"
     source_file = "${path.root}/lambda_code/screenshot_url.py"
-    output_path = "${path.root}/modules/archive/screenshot_url.zip"
+    output_path = "screenshot_url.zip"
 }
 
 module "screenshot_url_role" {
