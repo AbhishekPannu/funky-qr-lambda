@@ -5,7 +5,7 @@ module "extract_url_lambda" {
   role_arn             = module.extract_url_role.lambda_role_arn
   lambda_handler_name  = "extract_url.extract_url"
   layer_arns           = ["arn:aws:lambda:us-east-1:770693421928:layer:Klayers-p38-requests:18"]
-  existing_bucket_name = "s2h-raw"
+  existing_bucket_name = "test-extract-url-bucket"
 }
 
 module "extract_url_zip_archive" {
