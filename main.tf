@@ -15,7 +15,7 @@ module "lambda_extract_url" {
     source = "./modules/lambda"
     zip_path = module.zip_archive.output_path
     function_name = "test-funky-qr-extract-url"
-    role_name = module.iam_for_url_extraction.lambda_role_arn
+    role_arn = module.iam_for_url_extraction.lambda_role_arn
     lambda_handler_name = "extract_url.extract_url"
     layer_arns = ["arn:aws:lambda:us-east-1:770693421928:layer:Klayers-p38-requests:18"]
     existing_bucket_name = "s2h-raw"
