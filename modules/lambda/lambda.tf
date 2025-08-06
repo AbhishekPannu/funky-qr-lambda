@@ -21,7 +21,7 @@ resource "aws_lambda_permission" "allow_bucket" {
 }
 
 resource "aws_s3_bucket_notification" "bucket_notification" {
-  bucket = aws_s3_bucket.existing.id
+  bucket = data.aws_s3_bucket.existing.id
 
   lambda_function {
     lambda_function_arn = aws_lambda_function.this.arn
