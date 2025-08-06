@@ -1,3 +1,3 @@
 output "lambda_role" {
-    value = var.lambda_role_name
+    value = aws_iam_role.lambda_role.arn
 }
