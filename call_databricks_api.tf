@@ -1,4 +1,4 @@
-module "extract_url_lambda" {
+module "call_databricks_api_lambda" {
   source               = "./modules/lambda"
   zip_path             = module.call_databricks_api_zip_archive.output_path
   function_name        = "test-funky-qr-call_databricks_api"
