@@ -75,7 +75,7 @@ resource "aws_iam_role_policy" "lambda_s3_access" {
           "s3:PutObject",
           "s3:DeleteObject"
         ]
-        Resource = "arn:aws:s3:::${var.existing_bucket_name}/*"
+        Resource = "arn:aws:s3:::${var.trigger_bucket}/*"
       }
     ]
   })
