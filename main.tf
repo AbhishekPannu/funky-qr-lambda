@@ -25,7 +25,7 @@ module "screenshot_url" {
   trigger_bucket = "s2h-raw"
 }
 
-module "extract_url" {
+module "call_databricks_api" {
   source = "./modules/lambda_handler"
   function_name = "test-funky-qr-call-databricks-api"
   source_dir = "./lambda_code/call_databricks_api.py"
