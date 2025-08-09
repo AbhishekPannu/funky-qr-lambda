@@ -50,10 +50,10 @@ resource "aws_iam_role_policy" "lambda_dynamodb_read_all" {
       {
         Effect = "Allow"
         Action = [
-          "dynamodb:GetItem",
-          "dynamodb:Query",
-          "dynamodb:Scan",
-          "dynamodb:BatchGetItem"
+          "dynamodb:GetRecords",
+          "dynamodb:GetShardIterator",
+          "dynamodb:DescribeStream",
+          "dynamodb:ListStreams"
         ]
         Resource = "*"
       }
