@@ -30,15 +30,15 @@ variable "existing_bucket_name" {
 }
 
 variable "filter_prefix" {
-  type = string
+  type        = string
   description = "Prefix of event trigger inside bucket"
-  default = ""
+  default     = ""
 }
 
 variable "trigger_type" {
-    type = string
+  type = string
 }
 
 variable "dynamodb_table_name" {
-  type  = string
+  type = string
 }

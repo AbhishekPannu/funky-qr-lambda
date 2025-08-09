@@ -13,7 +13,7 @@ data "aws_s3_bucket" "existing" {
 }
 
 resource "aws_lambda_permission" "allow_bucket" {
-  count              = var.trigger_type == "s3" ? 1 : 0
+  count         = var.trigger_type == "s3" ? 1 : 0
   statement_id  = "AllowExecutionFromS3Bucket"
   action        = "lambda:InvokeFunction"
   function_name = var.function_name
@@ -22,7 +22,7 @@ resource "aws_lambda_permission" "allow_bucket" {
 }
 
 resource "aws_s3_bucket_notification" "bucket_notification" {
-  count              = var.trigger_type == "s3" ? 1 : 0
+  count  = var.trigger_type == "s3" ? 1 : 0
   bucket = data.aws_s3_bucket.existing.id
 
   lambda_function {
@@ -35,13 +35,13 @@ resource "aws_s3_bucket_notification" "bucket_notification" {
 }
 
 data "aws_dynamodb_table" "decoded_urls" {
-  count              = var.trigger_type == "dynamodb" ? 1 : 0
-  name = var.dynamodb_table_name
+  count = var.trigger_type == "dynamodb" ? 1 : 0
+  name  = var.dynamodb_table_name
 }
 
 resource "aws_lambda_event_source_mapping" "ddb_trigger" {
-  count              = var.trigger_type == "dynamodb" ? 1 : 0
-  event_source_arn   = data.aws_dynamodb_table.decoded_urls[0].stream_arn
-  function_name      = aws_lambda_function.this.arn
-  starting_position  = "LATEST"
+  count             = var.trigger_type == "dynamodb" ? 1 : 0
+  event_source_arn  = data.aws_dynamodb_table.decoded_urls[0].stream_arn
+  function_name     = aws_lambda_function.this.arn
+  starting_position = "LATEST"
 }

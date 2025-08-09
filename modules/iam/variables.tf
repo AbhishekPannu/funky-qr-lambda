@@ -4,6 +4,6 @@ variable "function_name" {
 }
 
 variable "trigger_bucket" {
-  type = string
+  type    = string
   default = ""
 }
