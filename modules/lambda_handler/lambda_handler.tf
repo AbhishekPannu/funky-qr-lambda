@@ -14,6 +14,7 @@ module "zip_archive" {
 }
 
 module "lambda_role" {
-  source             = "../iam"
-  lambda_name = var.function_name
+  source        = "../iam"
+  lambda_name   = var.function_name
+  function_name = var.function_name
 }

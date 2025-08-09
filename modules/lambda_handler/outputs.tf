@@ -1,3 +1,3 @@
 output "lambda_arn" {
-    value = module.extract_url_lambda.arn
+  value = module.extract_url_lambda.arn
 }
