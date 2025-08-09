@@ -3,7 +3,7 @@ variable "source_file" {
   description = "Location of source file to zip"
 }
 
-variable "output_path" {
-  type        = string
-  description = "Output of zipped file"
+variable "function_name" {
+  type = string
+  description = "Name of lambda function"
 }

@@ -1,5 +1,5 @@
 resource "aws_iam_role" "lambda_role" {
-  name               = var.lambda_role_name
+  name               = "${var.function_name}-role"
   assume_role_policy = data.aws_iam_policy_document.assume_role.json
 }
 
@@ -17,8 +17,8 @@ data "aws_iam_policy_document" "assume_role" {
 }
 
 resource "aws_iam_role_policy" "lambda" {
-  name = var.lambda_policy_name
-  role = var.lambda_role_name
+  name = ${var.function_name}-policy"
+  role = aws_iam_role.lambda_role.name
   policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
@@ -33,4 +33,9 @@ resource "aws_iam_role_policy" "lambda" {
       },
     ]
   })
+}
+
+resource "aws_iam_role_policy_attachment" "cloudwatch_logs" {
+  role       = aws_iam_role.lambda_role.name
+  policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
 }

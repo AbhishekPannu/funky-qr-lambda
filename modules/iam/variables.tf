@@ -1,7 +1,4 @@
-variable "lambda_role_name" {
+variable "function_name" {
   type = string
-}
-
-variable "lambda_policy_name" {
-  type = string
+  description = "Name of lambda function"
 }
