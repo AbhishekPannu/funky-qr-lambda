@@ -19,12 +19,12 @@ resource "aws_lambda_permission" "allow_bucket" {
   action        = "lambda:InvokeFunction"
   function_name = var.function_name
   principal     = "s3.amazonaws.com"
-  source_arn    = data.aws_s3_bucket.existing.arn
+  source_arn    = data.aws_s3_bucket.existing[0].arn
 }
 
 resource "aws_s3_bucket_notification" "bucket_notification" {
   count  = var.trigger_type == "s3" ? 1 : 0
-  bucket = data.aws_s3_bucket.existing.id
+  bucket = data.aws_s3_bucket.existing[0].id
 
   lambda_function {
     lambda_function_arn = aws_lambda_function.this.arn
