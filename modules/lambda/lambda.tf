@@ -9,6 +9,7 @@ resource "aws_lambda_function" "this" {
 }
 
 data "aws_s3_bucket" "existing" {
+  count         = var.trigger_type == "s3" ? 1 : 0
   bucket = var.trigger_bucket
 }
 
