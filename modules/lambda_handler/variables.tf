@@ -15,4 +15,5 @@ variable "trigger_bucket" {
 
 variable "function_arn" {
     type = string
+    description = "ARN of the Lambda function"
 }
