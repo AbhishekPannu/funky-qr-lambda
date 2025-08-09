@@ -9,7 +9,7 @@ resource "aws_lambda_function" "this" {
 }
 
 data "aws_s3_bucket" "existing" {
-  bucket = var.existing_bucket_name
+  bucket = var.trigger_bucket
 }
 
 resource "aws_lambda_permission" "allow_bucket" {

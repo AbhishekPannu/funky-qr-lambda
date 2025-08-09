@@ -24,8 +24,8 @@ variable "runtime_version" {
   default = "python3.9"
 }
 
-variable "existing_bucket_name" {
-  description = "Name of Existing bucket for trigger"
+variable "trigger_bucket" {
+  description = "Name of bucket for trigger"
   type        = string
 }
 
