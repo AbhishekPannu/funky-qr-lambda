@@ -1,4 +1,4 @@
-module "extract_url_lambda" {
+module "lambda_module" {
   source              = "../lambda"
   zip_path            = module.zip_archive.output_path
   function_name       = var.function_name
