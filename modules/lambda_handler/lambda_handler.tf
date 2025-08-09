@@ -11,10 +11,10 @@ module "extract_url_lambda" {
 module "zip_archive" {
   source      = "../archive"
   source_file = var.source_dir
+  function_name = var.function_name
 }
 
 module "lambda_role" {
   source        = "../iam"
-  lambda_name   = var.function_name
-  function_name = var.function_name
+  function_name   = var.function_name
 }
