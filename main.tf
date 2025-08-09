@@ -33,6 +33,6 @@ module "databricks_api" {
   function_name  = "test-funky-qr-call-databricks-api"
   source_dir     = "./lambda_code/call_databricks_api.py"
   trigger_bucket = "funkyqrstoragebucketb02b5-dev"
-  filter_prefix  = "webiste_screenshot/"
+  filter_prefix  = "website_screenshot/"
   trigger_type   = "s3"
 }
