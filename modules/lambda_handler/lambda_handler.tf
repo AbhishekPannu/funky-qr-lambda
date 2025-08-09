@@ -6,6 +6,9 @@ module "extract_url_lambda" {
   lambda_handler_name  = "${var.source_dir}.lambda"
   layer_arns           = ["arn:aws:lambda:us-east-1:770693421928:layer:Klayers-p38-requests:18"]
   existing_bucket_name = var.trigger_bucket
+  dynamodb_table_name = var.dynamodb_table_name
+  filter_prefix = var.filter_prefix
+  trigger_type = var.trigger_type
 }
 
 module "zip_archive" {
