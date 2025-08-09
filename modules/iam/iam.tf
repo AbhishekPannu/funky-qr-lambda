@@ -17,7 +17,7 @@ data "aws_iam_policy_document" "assume_role" {
 }
 
 resource "aws_iam_role_policy" "lambda" {
-  name = ${var.function_name}-policy"
+  name = "${var.function_name}-policy"
   role = aws_iam_role.lambda_role.name
   policy = jsonencode({
     Version = "2012-10-17"
