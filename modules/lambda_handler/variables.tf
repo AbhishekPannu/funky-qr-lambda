@@ -12,3 +12,7 @@ variable "trigger_bucket" {
   type        = string
   description = "Name of bucket on which trigger notification is present"
 }
+
+variable "function_arn" {
+    type = string
+}
